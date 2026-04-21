@@ -4,8 +4,14 @@ log('Web Serverni boshlash');
 
 const express = require('express');
 const http = require('http');
-
+const fs = require('fs');
 const app = express();
+
+let user;
+fs.readFile("database/user.json", "utf8", (err, data) => {
+    if(err) log("ERROR:", err);
+    else user = JSON.parse(data);
+})
 
 // 1: Kirish code
 app.use(express.static('public'));
@@ -28,6 +34,10 @@ app.get('/', function(req, res) {
     // res.end('<h1 style="background: red">hello world</h1>');
     res.render('harid');
 });
+
+app.get('/author', (req, res) => {
+    res.render("author", {user: user})
+})
 
 app.get('/about', function(req, res) {
     res.end('My name is Muza');
