@@ -21,6 +21,7 @@ app.set('view engine', 'ejs');
 // 4: Routing code
 app.get('/', function(req, res) {
     res.end('<h1 style="background: red">hello world</h1>');
+    
 });
 
 app.get('/about', function(req, res) {
