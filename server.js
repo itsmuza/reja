@@ -19,9 +19,14 @@ app.set('views', 'views');
 app.set('view engine', 'ejs');
 
 // 4: Routing code
+app.post('/create-item', (req, res) => {
+    log(req.body);
+    res.json({test: 'success'})
+})
+
 app.get('/', function(req, res) {
-    res.end('<h1 style="background: red">hello world</h1>');
-    
+    // res.end('<h1 style="background: red">hello world</h1>');
+    res.render('harid');
 });
 
 app.get('/about', function(req, res) {
