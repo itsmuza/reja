@@ -2,5 +2,8 @@
     "name": "Muza",
     "profession": "Software Engineer",
     "age": 25,
-    "language": ["Uzbek", "English", "Korean"]
+    "language": ["Uzbek", "English", "Korean"],
+    "address": "Fergana, Uzbekistan",
+    "residence": "BD",
+    "skills": ["Html", "CSS", "Js", "PHP", "WordPress"]
 }
