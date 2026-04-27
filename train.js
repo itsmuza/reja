@@ -1,3 +1,4 @@
+// TASK - 1
 function countLetter(char, word) {
     let count = 0;
     for (let c of word) {

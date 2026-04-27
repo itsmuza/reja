@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reja</title>
+    <title>Plan</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -13,7 +13,7 @@
   </head>
   <body style="background-color: #b8bbd1">
     <div class="container">
-      <h1 class="text-center mb-4">Reja va maqsadlar</h1>
+      <h1 class="text-center mb-4">Plans And To-dos</h1>
 
       <div class="jumbotron p-3 shadow-sm">
         <form id="create-form" action="/create-item" method="POST">
@@ -28,12 +28,16 @@
               style="flex: 1"
             />
             <button class="btn btn-primary" style="border-radius: 20px">
-              Yangi Xarid Qo'shish
+              Add New
             </button>
           </div>
         </form>
-
       </div>
+
+      <button id="clean-all" class="btn btn-danger" style="border-radius: 20px">
+        Delete All
+      </button>
+
     </div>
   </body>
 </html>

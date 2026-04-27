@@ -32,7 +32,7 @@ app.post('/create-item', (req, res) => {
 
 app.get('/', function(req, res) {
     // res.end('<h1 style="background: red">hello world</h1>');
-    res.render('harid');
+    res.render('plan');
 });
 
 app.get('/author', (req, res) => {
@@ -50,5 +50,5 @@ app.get('/gift/stuff', function(req, res) {
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function() {
-    log(`Sever is running successfully on port: ${PORT}`)
+    log(`Sever is running successfully on port: ${PORT}, http://localhost:${PORT}`)
 });
