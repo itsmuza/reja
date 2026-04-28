@@ -1,25 +1,35 @@
-
-function countLetter(char, word) {
+// TASK - B
+function countDigits(data) {
     let count = 0;
-    for (let c of word) {
-        if (c === char) count++;
+    for (let d of data) {
+        if ("0123456789".includes(d)) count++;
     }
     return count;
 }
+console.log(countDigits("asdg1sadf2cxzh3asdf4"))
 
-const result = countLetter('e', 'engineer');
+// TASK - A
+// function countLetter(char, word) {
+//     let count = 0;
+//     for (let c of word) {
+//         if (c === char) count++;
+//     }
+//     return count;
+// }
 
-console.log(result);
+// const result = countLetter('e', 'engineer');
 
-console.log("Jack Ma maslahatlari:");
-const list = [
-    'yaxshi talaba boling',
-    'togri boshliq tanlang va koprot hato qiling',
-    'uzingiga ishlashni boshlang',
-    'siz kuchli bolgan narsalarni qiling',
-    'yoshlarga investitsiya qiling',
-    'endi dam oling'
-];
+// console.log(result);
+
+// console.log("Jack Ma maslahatlari:");
+// const list = [
+//     'yaxshi talaba boling',
+//     'togri boshliq tanlang va koprot hato qiling',
+//     'uzingiga ishlashni boshlang',
+//     'siz kuchli bolgan narsalarni qiling',
+//     'yoshlarga investitsiya qiling',
+//     'endi dam oling'
+// ];
 
 
 
