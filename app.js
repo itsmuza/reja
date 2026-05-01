@@ -14,6 +14,7 @@ const app = express();
 // MongoDB call
 // const db = require('./server').db();
 const db = require("./server");
+const mongodb = require("mongodb")
 
 // 1: Kirish code
 app.use(express.static('public'));
@@ -32,12 +33,14 @@ app.post('/create-item', (req, res) => {
     log(req.body);
     const new_item = req.body.item;
     db.collection("plans").insertOne({item: new_item}, (err, data) => {
-        if(err) {
-            console.log(err);
-            res.end("something went wrong")
-        } else {
-            res.end("successfully added")
-        }
+        res.json(data.ops[0])
+    })
+})
+
+app.post("/delete-item", (req, res) => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne({_id: new mongodb.ObjectId(id)}, function(err, data) {
+        res.json({state: "success"})
     })
 })
 

@@ -1,12 +1,59 @@
-// TASK - B
-function countDigits(data) {
-    let count = 0;
-    for (let d of data) {
-        if ("0123456789".includes(d)) count++;
+// TASK - C
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+
+  getTime() {
+    const now = new Date();
+    const hour = String(now.getHours()).padStart(2, "0");
+    const minute = String(now.getMinutes()).padStart(2, "0");
+    return `${hour}:${minute}`;
+  }
+
+  qoldiq() {
+    console.log(
+      `Hozir ${this.getTime()}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola mavjud!`
+    );
+  }
+
+  sotish(mahsulot, soni) {
+    if (this[mahsulot] >= soni) {
+      this[mahsulot] -= soni;
+      console.log(`${this.getTime()}da ${soni}ta ${mahsulot} sotildi.`);
+    } else {
+      console.log(`${mahsulot} yetarli emas!`);
     }
-    return count;
+  }
+
+  qabul(mahsulot, soni) {
+    this[mahsulot] += soni;
+    console.log(`${this.getTime()}da ${soni}ta ${mahsulot} qabul qilindi.`);
+  }
 }
-console.log(countDigits("asdg1sadf2cxzh3asdf4"))
+
+const shop = new Shop(4, 5, 2);
+
+shop.qoldiq();
+shop.sotish("non", 3);
+shop.qabul("cola", 4);
+shop.qoldiq();
+
+
+
+
+// TASK - B
+// function countDigits(data) {
+//     let count = 0;
+//     for (let d of data) {
+//         if ("0123456789".includes(d)) count++;
+//     }
+//     return count;
+// }
+// console.log(countDigits("asdg1sadf2cxzh3asdf4"))
 
 // TASK - A
 // function countLetter(char, word) {
