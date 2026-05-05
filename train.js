@@ -1,46 +1,59 @@
-// TASK - C
-
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
-
-  getTime() {
-    const now = new Date();
-    const hour = String(now.getHours()).padStart(2, "0");
-    const minute = String(now.getMinutes()).padStart(2, "0");
-    return `${hour}:${minute}`;
-  }
-
-  qoldiq() {
-    console.log(
-      `Hozir ${this.getTime()}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola mavjud!`
-    );
-  }
-
-  sotish(mahsulot, soni) {
-    if (this[mahsulot] >= soni) {
-      this[mahsulot] -= soni;
-      console.log(`${this.getTime()}da ${soni}ta ${mahsulot} sotildi.`);
-    } else {
-      console.log(`${mahsulot} yetarli emas!`);
-    }
-  }
-
-  qabul(mahsulot, soni) {
-    this[mahsulot] += soni;
-    console.log(`${this.getTime()}da ${soni}ta ${mahsulot} qabul qilindi.`);
-  }
+// TASK - D
+function checkContent(data1, data2) {
+  data1 = data1.split("").sort().join("");
+  data2 = data2.split("").sort().join("");
+  // console.log(data1);
+  // console.log(data2);
+  return data1 === data2
 }
 
-const shop = new Shop(4, 5, 2);
+console.log(checkContent("mitgroup", "gmtiprou"));
+console.log(checkContent("hello", "ollhe"));
+console.log(checkContent("test", "best"));
 
-shop.qoldiq();
-shop.sotish("non", 3);
-shop.qabul("cola", 4);
-shop.qoldiq();
+
+// TASK - C
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
+
+//   getTime() {
+//     const now = new Date();
+//     const hour = String(now.getHours()).padStart(2, "0");
+//     const minute = String(now.getMinutes()).padStart(2, "0");
+//     return `${hour}:${minute}`;
+//   }
+
+//   qoldiq() {
+//     console.log(
+//       `Hozir ${this.getTime()}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola mavjud!`
+//     );
+//   }
+
+//   sotish(mahsulot, soni) {
+//     if (this[mahsulot] >= soni) {
+//       this[mahsulot] -= soni;
+//       console.log(`${this.getTime()}da ${soni}ta ${mahsulot} sotildi.`);
+//     } else {
+//       console.log(`${mahsulot} yetarli emas!`);
+//     }
+//   }
+
+//   qabul(mahsulot, soni) {
+//     this[mahsulot] += soni;
+//     console.log(`${this.getTime()}da ${soni}ta ${mahsulot} qabul qilindi.`);
+//   }
+// }
+
+// const shop = new Shop(4, 5, 2);
+
+// shop.qoldiq();
+// shop.sotish("non", 3);
+// shop.qabul("cola", 4);
+// shop.qoldiq();
 
 
 
